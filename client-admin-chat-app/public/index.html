@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client/Admin Chat</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="card auth-grid">
+        <section>
+          <h1>Client/Admin Chat</h1>
+          <p class="small">
+            Register as a client, manage your profile, and chat with admins in real time.
+          </p>
+          <p class="small">
+            Default admin credentials can be configured in <code>.env</code>.
+          </p>
+        </section>
+
+        <section>
+          <h2>Login</h2>
+          <form id="login-form">
+            <label for="login-email">Email</label>
+            <input id="login-email" type="email" required />
+
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" required />
+
+            <button type="submit">Login</button>
+          </form>
+
+          <h2 style="margin-top: 18px">Register (Client)</h2>
+          <form id="register-form">
+            <label for="register-fullname">Full name</label>
+            <input id="register-fullname" type="text" required />
+
+            <label for="register-email">Email</label>
+            <input id="register-email" type="email" required />
+
+            <label for="register-password">Password</label>
+            <input id="register-password" type="password" minlength="6" required />
+
+            <button type="submit">Create account</button>
+          </form>
+
+          <div id="status" class="status muted"></div>
+        </section>
+      </div>
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/auth.js"></script>
+  </body>
+</html>

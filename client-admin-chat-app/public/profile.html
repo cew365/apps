@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | Client/Admin Chat</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="topbar">
+        <h1>Profile</h1>
+        <div class="inline">
+          <a href="/chat.html">Chat</a>
+          <a id="adminLink" href="/admin.html" class="hidden">Admin</a>
+          <button id="logoutBtn" class="btn-danger" type="button">Log out</button>
+        </div>
+      </div>
+
+      <section class="card">
+        <h2>Edit your profile</h2>
+        <p id="statusMessage" class="muted"></p>
+        <form id="profileForm">
+          <label for="fullName">Full name</label>
+          <input id="fullName" name="fullName" type="text" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" disabled />
+
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" />
+
+          <label for="bio">Bio</label>
+          <textarea id="bio" name="bio" rows="5"></textarea>
+
+          <button type="submit">Save profile</button>
+        </form>
+      </section>
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/profile.js"></script>
+  </body>
+</html>

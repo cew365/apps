@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.topbar {
+  background: #111827;
+  color: #ffffff;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar .top-actions,
+.topbar .inline {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.topbar a,
+.topbar button {
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 12px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.split {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .split {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+.auth-grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .auth-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+label {
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 600;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+button.primary {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+.small {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.error {
+  color: #b91c1c;
+}
+
+.ok {
+  color: #047857;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-item {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.list-item:hover {
+  background: #f9fafb;
+}
+
+.room-item,
+.client-item {
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background: #f3f4f6;
+}
+
+.messages {
+  height: 420px;
+  overflow-y: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #ffffff;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #eef2ff;
+}
+
+.message.mine {
+  background: #dcfce7;
+}
+
+.message-meta {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.message .meta {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-form {
+  display: flex;
+  gap: 8px;
+}
+
+.message-form input {
+  flex: 1;
+}
+
+.message-form button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  padding: 8px;
+}
+
+.pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pill.admin {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.pill.client {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.status.error {
+  color: #b91c1c;
+}
+
+.status.ok {
+  color: #047857;
+}
+
+.hidden {
+  display: none !important;
+}
