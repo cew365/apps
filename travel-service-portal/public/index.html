@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Service Portal</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Travel Service Portal</h1>
+        <p>Clients and agents can connect. Admin can manage all accounts and chats.</p>
+      </header>
+
+      <section id="authSection" class="card">
+        <div class="split">
+          <div>
+            <h2>Register</h2>
+            <form id="registerForm">
+              <label>
+                Username
+                <input type="text" name="username" required minlength="3" />
+              </label>
+              <label>
+                Password
+                <input type="password" name="password" required minlength="6" />
+              </label>
+              <label>
+                Role
+                <select name="role" required>
+                  <option value="client">Client</option>
+                  <option value="agent">Agent</option>
+                </select>
+              </label>
+              <button type="submit">Create account</button>
+            </form>
+          </div>
+
+          <div>
+            <h2>Login</h2>
+            <form id="loginForm">
+              <label>
+                Username
+                <input type="text" name="username" required />
+              </label>
+              <label>
+                Password
+                <input type="password" name="password" required />
+              </label>
+              <button type="submit">Login</button>
+            </form>
+            <p class="hint">Default admin: <code>admin / admin123</code></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="dashboardSection" class="card hidden">
+        <div class="topbar">
+          <div>
+            <h2>Dashboard</h2>
+            <p id="whoami"></p>
+          </div>
+          <button id="logoutBtn" type="button">Logout</button>
+        </div>
+
+        <div id="clientComposer" class="subcard hidden">
+          <h3>Start chat with an agent</h3>
+          <form id="newConversationForm" class="inline-form">
+            <label>
+              Agent
+              <select id="agentSelect" required></select>
+            </label>
+            <label class="grow">
+              First message
+              <input id="initialMessageInput" type="text" placeholder="Tell the agent what you need..." />
+            </label>
+            <button type="submit">Start chat</button>
+          </form>
+        </div>
+
+        <div id="adminUserManager" class="subcard hidden">
+          <h3>Admin: Manage accounts</h3>
+          <form id="adminCreateUserForm" class="inline-form">
+            <label>
+              Username
+              <input name="username" type="text" required minlength="3" />
+            </label>
+            <label>
+              Password
+              <input name="password" type="password" required minlength="6" />
+            </label>
+            <label>
+              Role
+              <select name="role" required>
+                <option value="client">Client</option>
+                <option value="agent">Agent</option>
+                <option value="admin">Admin</option>
+              </select>
+            </label>
+            <label>
+              Status
+              <select name="status" required>
+                <option value="active">Active</option>
+                <option value="halted">Halted</option>
+                <option value="suspended">Suspended</option>
+              </select>
+            </label>
+            <button type="submit">Create user</button>
+          </form>
+          <div class="table-wrap">
+            <table id="usersTable">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Username</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="chat-layout">
+          <aside>
+            <h3>Conversations</h3>
+            <ul id="conversationList"></ul>
+          </aside>
+          <section>
+            <h3 id="chatTitle">Select a conversation</h3>
+            <div id="messagesBox"></div>
+            <form id="messageForm" class="inline-form">
+              <input id="messageInput" type="text" placeholder="Type your message..." required maxlength="2000" />
+              <button type="submit">Send</button>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>
