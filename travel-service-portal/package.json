@@ -1,0 +1,20 @@
+{
+  "name": "travel-service-portal",
+  "version": "1.0.0",
+  "description": "Travel service portal with client, agent, and admin roles",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"No automated tests configured\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.8.0",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0"
+  }
+}
