@@ -7,5 +7,6 @@
 *-64.png
 index.json
 node_modules
+client-admin-chat-app/data/app.db
 yarn.lock
 .gitsync_lock

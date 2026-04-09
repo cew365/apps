@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat | Client Admin Chat</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Chat</h1>
+      <nav class="top-actions">
+        <a href="/profile.html">Profile</a>
+        <a id="adminLink" class="hidden" href="/admin.html">Admin</a>
+        <button id="logoutBtn" type="button">Logout</button>
+      </nav>
+    </header>
+
+    <main class="container split">
+      <section class="card sidebar">
+        <h2>Conversations</h2>
+        <p id="sidebarHint" class="muted"></p>
+        <ul id="conversationList" class="list"></ul>
+      </section>
+
+      <section class="card main-panel">
+        <h2 id="conversationTitle">Select a conversation</h2>
+        <div id="messages" class="messages"></div>
+        <form id="messageForm" class="hidden">
+          <input
+            id="messageInput"
+            type="text"
+            placeholder="Write a message..."
+            required
+            autocomplete="off"
+          />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/js/common.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/chat.js"></script>
+  </body>
+</html>
