@@ -21,7 +21,8 @@
     "pretest-all": "npm run build",
     "test-all": "mocha --reporter min && prettier --check \"./**/*.{ts,js,yml}\" --write",
     "wizard": "node wizard.js",
-    "release": "script/release.sh"
+    "release": "script/release.sh",
+    "o365:send": "node script/o365-send-mail.js"
   },
   "repository": "https://github.com/electron/apps",
   "keywords": [
@@ -78,6 +79,7 @@
   "dependencies": {
     "json-stable-stringify": "^1.0.1",
     "mime-types": "^2.1.30",
+    "puppeteer": "^24.40.0",
     "rev-hash": "^3.0.0"
   },
   "lint-staged": {
