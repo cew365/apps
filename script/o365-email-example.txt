@@ -1,0 +1,6 @@
+to: person@example.com
+subject: Hello from Puppeteer
+content: This email was created by a Node.js script.
+  You can continue on multiple lines by indenting.
+  Regards,
+  Automation Bot
