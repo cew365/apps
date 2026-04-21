@@ -1,0 +1,167 @@
+:root {
+  --app-bg: #f8f9fa;
+  --surface-bg: #ffffff;
+  --surface-border: #e9ecef;
+  --app-text: #212529;
+  --app-muted: #6c757d;
+  --app-radius: 1rem;
+}
+
+body {
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  font-family: "Inter", "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 1rem;
+  padding-bottom: 6rem;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background: rgba(248, 249, 250, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--surface-border);
+  margin: -1rem -1rem 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.surface-card {
+  border: 1px solid var(--surface-border);
+  border-radius: var(--app-radius);
+  background: var(--surface-bg);
+  box-shadow: 0 6px 18px rgba(33, 37, 41, 0.06);
+}
+
+.surface-card .card-body {
+  padding: 1rem;
+}
+
+.hero-title {
+  font-size: clamp(1.3rem, 2.2vw + 0.8rem, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.hero-subtitle {
+  color: var(--app-muted);
+  margin-bottom: 0;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.quick-actions .btn {
+  min-height: 3rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.list-group-item {
+  border-color: var(--surface-border);
+}
+
+.form-control,
+.form-select {
+  min-height: 2.75rem;
+  border-radius: 0.75rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.btn-primary {
+  border-radius: 0.75rem;
+  font-weight: 600;
+  min-height: 2.75rem;
+}
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--surface-bg);
+  border-top: 1px solid var(--surface-border);
+  z-index: 1030;
+}
+
+.bottom-nav .nav-link {
+  color: var(--app-muted);
+  padding: 0.55rem 0.25rem;
+  font-size: 0.8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: center;
+}
+
+.bottom-nav .nav-link.active {
+  color: var(--bs-primary);
+}
+
+.bottom-nav .bi {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+@media (min-width: 576px) {
+  .app-shell {
+    padding: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .app-header {
+    margin: -1.25rem -1.25rem 1.25rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .quick-actions {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .bottom-nav {
+    position: static;
+    border: 0;
+    background: transparent;
+  }
+
+  .bottom-nav .nav {
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .bottom-nav .nav-link {
+    flex-direction: row;
+    border-radius: 999px;
+    padding: 0.5rem 0.9rem;
+    background: #eef2ff;
+  }
+}
+
+@media (min-width: 992px) {
+  .app-shell {
+    max-width: 960px;
+    margin-inline: auto;
+  }
+
+  .surface-card .card-body {
+    padding: 1.25rem 1.35rem;
+  }
+}
